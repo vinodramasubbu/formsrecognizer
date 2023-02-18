@@ -1,0 +1,16 @@
+{
+  "name": "nodejs-blob-to-cosmos-formrecognizer1",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "@azure/ai-form-recognizer": "^3.0.0",
+    "@microsoft/applicationinsights-web": "^2.6.2",
+    "applicationinsights": "^1.8.10",
+    "azure-storage": "^2.10.3",
+    "uuid": "^8.3.2"
+  }
+}

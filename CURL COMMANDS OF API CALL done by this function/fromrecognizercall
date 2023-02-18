@@ -1,0 +1,59 @@
+root@DESKTOP-UVC05M3:~#
+root@DESKTOP-UVC05M3:~# curl -i -X POST "https://azrecoform1.cognitiveservices.azure.com/formrecognizer/v2.1-preview.3/prebuilt/receipt/analyze" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: XXXXXXXXXXXXXXXXXXXXXXXX" --data "{ 'source': 'https://d2bvhe78se1grn.cloudfront.net/original/3X/4/7/4741df84d8c2aac1d560d7762f056a2066462361.jpeg'}"
+HTTP/1.1 202 Accepted
+Content-Length: 0
+Operation-Location: https://azrecoform1.cognitiveservices.azure.com/formrecognizer/v2.1-preview.3/prebuilt/receipt/analyzeResults/3c545211-1ac7-426a-b7e1-d2a4a55b203a
+x-envoy-upstream-service-time: 316
+apim-request-id: 3c545211-1ac7-426a-b7e1-d2a4a55b203a
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+x-content-type-options: nosniff
+Date: Mon, 10 May 2021 02:13:53 GMT
+
+root@DESKTOP-UVC05M3:~# curl -v -X GET "https://azrecoform1.cognitiveservices.azure.com/formrecognizer/v2.1-preview.3/prebuilt/receipt/analyzeResults/3c545211-1ac7-426a-b7e1-d2a4a55b203a" -H "Oc
+p-Apim-Subscription-Key: XXXXXXXXXXXXXXXXXXXXXXXX"
+Note: Unnecessary use of -X or --request, GET is already inferred.
+*   Trying 40.121.217.232:443...
+* TCP_NODELAY set
+* Connected to azrecoform1.cognitiveservices.azure.com (40.121.217.232) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*   CAfile: /etc/ssl/certs/ca-certificates.crt
+  CApath: /etc/ssl/certs
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES256-GCM-SHA384
+* ALPN, server did not agree to a protocol
+* Server certificate:
+*  subject: C=US; ST=WA; L=Redmond; O=Microsoft Corporation; CN=eastus.api.cognitive.microsoft.com
+*  start date: Apr 22 18:44:09 2021 GMT
+*  expire date: Apr 17 18:44:09 2022 GMT
+*  subjectAltName: host "azrecoform1.cognitiveservices.azure.com" matched cert's "*.cognitiveservices.azure.com"
+*  issuer: C=US; O=Microsoft Corporation; CN=Microsoft Azure TLS Issuing CA 06
+*  SSL certificate verify ok.
+> GET /formrecognizer/v2.1-preview.3/prebuilt/receipt/analyzeResults/3c545211-1ac7-426a-b7e1-d2a4a55b203a HTTP/1.1
+> Host: azrecoform1.cognitiveservices.azure.com
+> User-Agent: curl/7.68.0
+> Accept: */*
+> Ocp-Apim-Subscription-Key: XXXXXXXXXXXXXXXXXXXXXXXX
+>
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Content-Length: 2555
+< Content-Type: application/json; charset=utf-8
+< x-envoy-upstream-service-time: 26
+< apim-request-id: b3eb6623-f82d-4907-81e6-65293dd0b6f9
+< Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+< x-content-type-options: nosniff
+< Date: Mon, 10 May 2021 02:15:13 GMT
+<
+{"status":"succeeded","createdDateTime":"2021-05-10T02:13:54Z","lastUpdatedDateTime":"2021-05-10T02:13:56Z","analyzeResult":{"version":"2.1.0","readResults":[{"page":1,"angle":0,"width":257,"height":513,"unit":"pixel"}],"documentResults":[{"docType":"prebuilt:receipt","pageRange":[1,1],"fields":{"Items":{"type":"array","valueArray":[{"type":"object","valueObject":{"Name":{"type":"string","valueString":"AIDS","text":"AIDS","boundingBox":[26,165,47,165,47,174,26,174],"page":1,"confidence":0.983},"TotalPrice":{"type":"number","valueNumber":51.74,"text":"51.74","boundingBox":[195,164,219,163,219,174,195,174],"page":1,"confidence":0.986}}},{"type":"object","valueObject":{"Name":{"type":"string","valueString":"GAMECOM X40","text":"GAMECOM X40","boundingBox":[26,176,86,176,86,187,26,187],"page":1,"confidence":0.979},"TotalPrice":{"type":"number","valueNumber":2.5,"text":"2.50","boundingBox":[199,174,219,174,219,185,199,185],"page":1,"confidence":0.982}}},{"type":"object","valueObject":{"Name":{"type":"string","valueString":"PEPSI","text":"PEPSI","boundingBox":[26,187,54,187,54,197,26,197],"page":1,"confidence":0.982},"TotalPrice":{"type":"number","valueNumber":438,"text":"4,38","boundingBox":[200,185,220,185,220,196,200,196],"page":1,"confidence":0.985}}}]},"MerchantAddress":{"type":"string","valueString":"DEATH VALLEY, OJ","text":"DEATH VALLEY, OJ","boundingBox":[79,142,164,142,164,154,79,154],"page":1,"confidence":0.948},"MerchantName":{"type":"string","valueString":"Walmart","text":"Walmart","boundingBox":[34,62,171,62,171,91,35,92],"page":1,"confidence":0.974},"MerchantPhoneNumber":{"type":"phoneNumber","valuePhoneNumber":"+15262370154","text":"( 526 ) - 237 - 0154","boundingBox":[66,123,176,123,176,135,66,135],"page":1,"confidence":0.987},"ReceiptType":{"type":"string","valueString":"Itemized","confidence":0.995},"Subtotal":{"type":"number","valueNumber":1284,"text":"12,84","boundingBox":[196,195,220,195,221,206,196,206],"page":1,"confidence":0.98},"Tax":{"type":"number","valueNumber":5.2,"text":"5.20","boundingBox* Connection #0 to host azrecoform1.cognitiveservices.azure.com left intact
+":[199,207,220,207,220,218,199,218],"page":1,"confidence":0.985},"Total":{"type":"number","valueNumber":63.82,"text":"63.82","boundingBox":[195,219,222,220,222,232,194,230],"page":1,"confidence":0.98},"TransactionDate":{"type":"date","valueDate":"2012-09-01","text":"09/01/12","boundingBox":[74,321,118,321,118,335,74,335],"page":1,"confidence":0.983},"TransactionTime":{"type":"time","valueTime":"14:16:00","text":"14:16:00","boundingBox":[141,322,179,322,179,334,141,334],"page":1,"confidence":0.982}}}]}}root@DESKTOP-UVC05M3:~#
+root@DESKTOP-UVC05M3:~#

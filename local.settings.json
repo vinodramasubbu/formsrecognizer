@@ -1,0 +1,9 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=azrecoformstgacc1;AccountKey=XXXXXXXXXXXXXXXXXXXXXXXX;EndpointSuffix=core.windows.net",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "azrecoformstgacc1_STORAGE": "DefaultEndpointsProtocol=https;AccountName=azrecoformstgacc1;AccountKey=XXXXXXXXXXXXXXXXXXXXXXXX;EndpointSuffix=core.windows.net",
+    "azrecoformcdbacc1_DOCUMENTDB": "AccountEndpoint=https://azrecoformcdbacc1.documents.azure.com:443/;AccountKey=XXXXXXXXXXXXXXXXXXXXXXXX==;"
+  }
+}

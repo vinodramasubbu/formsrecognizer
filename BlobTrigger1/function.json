@@ -1,0 +1,21 @@
+{
+  "bindings": [
+    {
+      "name": "myBlob",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "receipts1/{name}",
+      "connection": "azrecoformstgacc1_STORAGE"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "outputDocument",
+      "databaseName": "receiptdb",
+      "collectionName": "receipts",
+      "createIfNotExists": "true",
+      "connectionStringSetting": "azrecoformcdbacc1_DOCUMENTDB",
+      "partitionKey": "/id"
+    }
+  ]
+}

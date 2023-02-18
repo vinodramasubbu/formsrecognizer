@@ -1,0 +1,1 @@
+# curl -H 'api-key: XXXXXXXXXXXXXXXXXXXXXXXX' -H 'Ocp-Apim-Subscription-Key: XXXXXXXXXXXXXXXXXXXXXXXX' -X GET  "https://apimgmtcall.azure-api.net/search1/indexes/azureblob-index/docs?api-version=2020-06-30-Preview&search=*"
